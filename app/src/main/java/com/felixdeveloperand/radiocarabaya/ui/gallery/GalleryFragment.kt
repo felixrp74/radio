@@ -1,5 +1,8 @@
 package com.felixdeveloperand.radiocarabaya.ui.gallery
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +33,7 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
@@ -37,6 +41,7 @@ class GalleryFragment : Fragment() {
         return root
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnRoll.setOnClickListener {
@@ -45,6 +50,18 @@ class GalleryFragment : Fragment() {
 
         galleryViewModel.text.observe(viewLifecycleOwner){
             binding.textGallery.text = it
+        }
+
+        binding.webview.loadUrl("https://radioondaazul.com/")
+        binding.webview.settings.javaScriptEnabled = true
+
+        binding.floatingActionButtonWebSite.setOnClickListener {
+            val url = "https://radioondaazul.com/"
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(url)
+            )
+            startActivity(urlIntent)
         }
     }
 

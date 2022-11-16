@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
+    android:background="@mipmap/allincapac"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -16,9 +16,10 @@
         <ImageView
             android:id="@+id/album_image"
             android:layout_width="match_parent"
-            android:layout_height="416dp"
+            android:layout_height="200dp"
             android:layout_gravity="top"
-            android:src="@drawable/song_icon" />
+            android:layout_margin="50dp"
+            android:src="@mipmap/ic_radio_launcher" />
 
 
         <TextView
@@ -66,19 +67,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="13dp"
-
             android:gravity="center"
             android:text="Pause" />
 
-        <Button
-            android:id="@+id/buttonNext"
-            android:layout_width="379dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="13dp"
-
-            android:gravity="center"
-            android:text="NEXT" />
 
 
     </LinearLayout>
