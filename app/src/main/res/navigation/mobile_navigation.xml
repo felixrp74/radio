@@ -22,4 +22,10 @@
         android:name="com.felixdeveloperand.radiocarabaya.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_send_message"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_llamada"
+        android:name="com.felixdeveloperand.radiocarabaya.ui.llamada.LlamadaFragment"
+        android:label="@string/menu_call_radio"
+        tools:layout="@layout/fragment_llamada" />
 </navigation>

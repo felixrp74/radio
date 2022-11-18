@@ -1,5 +1,7 @@
 package com.felixdeveloperand.radiocarabaya.ui.slideshow
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +34,29 @@ class SlideshowFragment : Fragment() {
             textView.text = it
         }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        binding.btnCardViewWhatsapp.setOnClickListener{
+
+            val url = "https://api.whatsapp.com/send?phone=+51926538932"
+
+            val openWhatsappIntent = Intent(Intent.ACTION_VIEW)
+            openWhatsappIntent.data = Uri.parse(url)
+            startActivity(openWhatsappIntent)
+        }
+
+        binding.btnCardViewWhatsapp.setOnClickListener{
+
+            val urlTele = "https://t.me/devexpertocanal"
+
+            val openTelegramIntent = Intent(Intent.ACTION_VIEW)
+            openTelegramIntent.data = Uri.parse(urlTele)
+            startActivity(openTelegramIntent)
+        }
     }
 
     override fun onDestroyView() {

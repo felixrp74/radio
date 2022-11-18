@@ -12,4 +12,7 @@
     <string name="menu_send_message">Enviar Mensaje</string>
     <string name="menu_call_radio">Llamar a la radio</string>
     <string name="menu_exit">Salir</string>
+    <string name="radio_carabaya">Radio Carabaya</string>
+    <string name="puno_peru">Puno - Perú</string>
+    <string name="senal_pueblos">Señal de los pueblos</string>
 </resources>

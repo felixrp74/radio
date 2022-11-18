@@ -32,25 +32,24 @@ class GalleryFragment : Fragment() {
 
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-
+/*
         val textView: TextView = binding.textGallery
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
-        }
+        }*/
         return root
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnRoll.setOnClickListener {
+        /*binding.btnRoll.setOnClickListener {
             galleryViewModel.onBtnRollPressed()
         }
 
         galleryViewModel.text.observe(viewLifecycleOwner){
             binding.textGallery.text = it
-        }
+        }*/
 
         binding.webview.loadUrl("https://radioondaazul.com/")
         binding.webview.settings.javaScriptEnabled = true
