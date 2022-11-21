@@ -48,7 +48,7 @@ class RadioFragment : Fragment() {
             )
             setDataSource(url)
             prepare() // might take long! (for buffering, etc)
-//            start()
+            start()
         }
 
 
@@ -85,17 +85,37 @@ class RadioFragment : Fragment() {
             mediaPlayer.pause()
             Toast.makeText(activity, "En Pausa...", Toast.LENGTH_SHORT).show()
         }
+        binding.buttonCloseApp.setOnClickListener {
+            mediaPlayer.stop()
+            activity?.apply {
+                moveTaskToBack(true)
+                finish()
+            }
+        }
 
     }
 
     override fun onResume() {
         super.onResume()
 //        mediaPlayer.prepareAsync()
-//        mediaPlayer.start()
+        mediaPlayer.start()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.stop()
+        activity?.apply {
+            moveTaskToBack(true)
+            finish()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
     }
 }

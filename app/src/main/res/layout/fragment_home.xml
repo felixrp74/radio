@@ -68,6 +68,15 @@
             android:gravity="center"
             android:text="Pause" />
 
+        <Button
+            android:id="@+id/buttonCloseApp"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="13dp"
+            android:gravity="center"
+            android:text="Cerrar" />
+
     </LinearLayout>
 
 </LinearLayout>
