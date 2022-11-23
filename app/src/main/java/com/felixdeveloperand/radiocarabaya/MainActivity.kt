@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 //        navView.setNavigationItemSelectedListener(this@MainActivity)
-
-
         //val slai:ItemView = findViewById(R.id.action_settings)
     }
 
@@ -66,25 +64,17 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
                 // navigate to settings screen
-                showToast("como estas, ESTAS listA para SALIR?")
                 this@MainActivity.apply {
                     moveTaskToBack(true)
                     finish()
                 }
                 true
             }
-//            R.id.action_done -> {
-//                // save profile changes
-//                true
-//            }
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }

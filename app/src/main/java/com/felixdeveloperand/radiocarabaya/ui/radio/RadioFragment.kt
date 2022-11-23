@@ -92,7 +92,6 @@ class RadioFragment : Fragment() {
                 finish()
             }
         }
-
     }
 
     override fun onResume() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".ui.message.MessageFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btnCardViewWhatsapp"
@@ -32,7 +32,7 @@
         below are the two widgets imageview and text view we are displaying inside our card view.
         -->
         <ImageView
-            android:id="@+id/img"
+
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"

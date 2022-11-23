@@ -1,4 +1,4 @@
-package com.felixdeveloperand.radiocarabaya.ui.gallery
+package com.felixdeveloperand.radiocarabaya.ui.website
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,30 +7,29 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.felixdeveloperand.radiocarabaya.databinding.FragmentGalleryBinding
+import com.felixdeveloperand.radiocarabaya.databinding.FragmentWebsiteBinding
 
-class GalleryFragment : Fragment() {
+class WebsiteFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentWebsiteBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private lateinit var galleryViewModel:GalleryViewModel
+    private lateinit var websiteViewModel:WebsiteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        galleryViewModel =
-            ViewModelProvider(this)[GalleryViewModel::class.java]
+        websiteViewModel =
+            ViewModelProvider(this)[WebsiteViewModel::class.java]
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentWebsiteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 /*
         val textView: TextView = binding.textGallery

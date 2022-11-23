@@ -1,4 +1,4 @@
-package com.felixdeveloperand.radiocarabaya.ui.slideshow
+package com.felixdeveloperand.radiocarabaya.ui.message
 
 import android.content.Intent
 import android.net.Uri
@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.felixdeveloperand.radiocarabaya.databinding.FragmentSlideshowBinding
+import com.felixdeveloperand.radiocarabaya.databinding.FragmentMessageBinding
 
-class SlideshowFragment : Fragment() {
+class MessageFragment : Fragment() {
 
-    private var _binding: FragmentSlideshowBinding? = null
+    private var _binding: FragmentMessageBinding? = null
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -23,14 +23,14 @@ class SlideshowFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this)[SlideshowViewModel::class.java]
+        val messageViewModel =
+            ViewModelProvider(this)[MessageViewModel::class.java]
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentMessageBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        messageViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
@@ -38,7 +38,6 @@ class SlideshowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         binding.btnCardViewWhatsapp.setOnClickListener{
 
@@ -49,7 +48,7 @@ class SlideshowFragment : Fragment() {
             startActivity(openWhatsappIntent)
         }
 
-        binding.btnCardViewWhatsapp.setOnClickListener{
+        binding.btnCardViewTelegram.setOnClickListener{
 
             val urlTele = "https://t.me/devexpertocanal"
 

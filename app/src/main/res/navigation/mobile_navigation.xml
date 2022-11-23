@@ -13,15 +13,15 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.felixdeveloperand.radiocarabaya.ui.gallery.GalleryFragment"
+        android:name="com.felixdeveloperand.radiocarabaya.ui.website.WebsiteFragment"
         android:label="@string/menu_website"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_website" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.felixdeveloperand.radiocarabaya.ui.slideshow.SlideshowFragment"
+        android:name="com.felixdeveloperand.radiocarabaya.ui.message.MessageFragment"
         android:label="@string/menu_send_message"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_message" />
 
     <fragment
         android:id="@+id/nav_llamada"
