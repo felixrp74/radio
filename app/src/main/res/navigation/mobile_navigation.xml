@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.felixdeveloperand.radiocarabaya.ui.radio.RadioFragment"
         android:label="@string/menu_inicio"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_radio" />
 
     <fragment
         android:id="@+id/nav_gallery"
