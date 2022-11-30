@@ -19,6 +19,7 @@ inline fun SearchView.onQueryTextChanged(crossinline onQueryTextChanged: (String
     })
 }
 
+
 fun View.show() {
     visibility = View.VISIBLE
 }
