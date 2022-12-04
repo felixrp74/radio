@@ -1,19 +1,14 @@
 package com.felixdeveloperand.radiocarabaya.ui.radio
 
-
-import android.content.Intent
-import android.media.AudioManager
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.felixdeveloperand.radiocarabaya.R
 import com.felixdeveloperand.radiocarabaya.databinding.FragmentRadioBinding
-import com.felixdeveloperand.radiocarabaya.utils.RADIO_URL
+import com.felixdeveloperand.radiocarabaya.utils.showToast
 
 
 class RadioFragment : Fragment() {
@@ -36,7 +31,6 @@ class RadioFragment : Fragment() {
 
         _binding = FragmentRadioBinding.inflate(inflater, container, false)
 
-
         return binding.root
     }
 
@@ -47,16 +41,19 @@ class RadioFragment : Fragment() {
             binding.pbCircular.visibility = if (visible) View.VISIBLE else View.GONE
         }
 
-        binding.buttonPlay.setOnClickListener {
+        binding.buttonPlayPause.setOnClickListener {
 
             isStreaming = if (isStreaming) {
                 radioViewModel.stopPlaying()
+                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_pause)
+                showToast("En pausa...")
                 false
             } else {
                 radioViewModel.startAudioStream()
+                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_play)
+                showToast( "Play Buscando Radio || Reproduciendo... ")
                 true
             }
         }
     }
-
 }

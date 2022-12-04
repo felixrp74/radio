@@ -3,7 +3,6 @@ package com.felixdeveloperand.radiocarabaya.ui.radio
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.*
 import com.felixdeveloperand.radiocarabaya.utils.RADIO_URL
 import kotlinx.coroutines.Dispatchers
