@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="7dp"
-            android:background="@drawable/ic_pause"
+            android:background="@drawable/ic_play"
             android:paddingTop="23dp"
             android:text=""
             android:textAlignment="center"

@@ -1,5 +1,7 @@
 package com.felixdeveloperand.radiocarabaya.ui.llamada
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,10 +25,13 @@ class LlamadaFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_llamada, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(LlamadaViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        val dialIntent = Intent(Intent.ACTION_DIAL)
+        dialIntent.data = Uri.parse("tel:" + "949607936")
+        startActivity(dialIntent)
+
+    }
 }

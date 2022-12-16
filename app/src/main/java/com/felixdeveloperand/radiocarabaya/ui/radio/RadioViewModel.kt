@@ -58,12 +58,10 @@ class RadioViewModel : ViewModel() {
 
 
     fun stopPlaying() {
-        if ( _mediaPlayer.value!!.isPlaying) {
             _mediaPlayer.value!!.stop()
             _mediaPlayer.value!!.release()
             _mediaPlayer.value = MediaPlayer()
             _mediaPlayer.value!!.reset()
-        }
     }
 
 }

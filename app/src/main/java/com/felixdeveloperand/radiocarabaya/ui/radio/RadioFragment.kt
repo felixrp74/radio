@@ -10,7 +10,6 @@ import com.felixdeveloperand.radiocarabaya.R
 import com.felixdeveloperand.radiocarabaya.databinding.FragmentRadioBinding
 import com.felixdeveloperand.radiocarabaya.utils.showToast
 
-
 class RadioFragment : Fragment() {
 
     private lateinit var _binding: FragmentRadioBinding
@@ -42,15 +41,14 @@ class RadioFragment : Fragment() {
         }
 
         binding.buttonPlayPause.setOnClickListener {
-
             isStreaming = if (isStreaming) {
                 radioViewModel.stopPlaying()
-                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_pause)
+                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_play)
                 showToast("En pausa...")
                 false
             } else {
                 radioViewModel.startAudioStream()
-                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_play)
+                binding.buttonPlayPause.setBackgroundResource(R.drawable.ic_pause)
                 showToast( "Play Buscando Radio || Reproduciendo... ")
                 true
             }
