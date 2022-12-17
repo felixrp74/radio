@@ -14,15 +14,16 @@
         android:layout_marginTop="70dp"
         android:background="#008080"
         android:padding="5dp"
-        android:text="TutorialsPoint"
+        android:text="LLamar a la radio"
         android:textColor="#fff"
         android:textSize="24sp"
         android:textStyle="bold" />
+
     <Button
+        android:id="@+id/btnCall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:onClick="call"
-        android:text="Call" />
+        android:text="Llamar" />
 
 </RelativeLayout>

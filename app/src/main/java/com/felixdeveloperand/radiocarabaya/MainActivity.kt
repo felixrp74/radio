@@ -3,6 +3,7 @@ package com.felixdeveloperand.radiocarabaya
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -14,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView.ItemView
 import com.felixdeveloperand.radiocarabaya.databinding.ActivityMainBinding
+import com.felixdeveloperand.radiocarabaya.utils.NetworkConnection
 import com.felixdeveloperand.radiocarabaya.utils.showToast
 
 class MainActivity : AppCompatActivity() {
@@ -29,12 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-/*
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
- */
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -47,8 +43,23 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//        navView.setNavigationItemSelectedListener(this@MainActivity)
-        //val slai:ItemView = findViewById(R.id.action_settings)
+
+        //====================================================
+        val layoutInflater = findViewById<View>(R.id.networkErrorLayout)
+        val networkConnection= NetworkConnection(applicationContext)
+        networkConnection.observe(this) { isConnected ->
+            if (isConnected) {
+//                Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show()
+                showToast("Connected")
+                layoutInflater.visibility= View.GONE
+            } else {
+//                Toast.makeText(this, "Not Connected", Toast.LENGTH_SHORT).show()
+                showToast("Not Connected")
+                layoutInflater.visibility= View.VISIBLE
+            }
+        }
+        //====================================================
+
     }
 
 
