@@ -13,7 +13,6 @@ import com.felixdeveloperand.radiocarabaya.utils.showToast
 class RadioFragment : Fragment() {
 
     private lateinit var _binding: FragmentRadioBinding
-//    private lateinit var mediaPlayer: MediaPlayer
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding
@@ -29,7 +28,6 @@ class RadioFragment : Fragment() {
     ): View {
 
         _binding = FragmentRadioBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 

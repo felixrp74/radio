@@ -51,9 +51,7 @@ class RadioViewModel : ViewModel() {
             }
 
             _loading.value = false
-
         }
-
     }
 
 
